@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project was created using command `npx create-react-app my-app`
+
+This app was created following this repo: https://github.com/gitdagray/react_redux_toolkit
 ## Available Scripts
 
 In the project directory, you can run:
