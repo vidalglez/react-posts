@@ -1,10 +1,10 @@
 import './index.css';
-import PostList from './features/posts/PostList';
+import PostsList from './features/posts/PostsList';
 
 function App() {
     return (
         <main className="App">
-            <PostList />
+            <PostsList />
         </main>
     );
 }
