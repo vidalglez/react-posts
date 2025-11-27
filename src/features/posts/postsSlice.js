@@ -1,12 +1,12 @@
 import {createSlice, nanoid} from '@reduxjs/toolkit';
 
 const initialState = [
-    {id: '1', title: 'Music', content: 'Tosca'},
-    {id: '2', title: 'Games', content: 'Nioh'},
-    {id: '3', title: 'Television', content: 'Games of Thrones'}
+    {id: '1', title: 'Music', content: 'Tosca', userId: '1'},
+    {id: '2', title: 'Games', content: 'Nioh', userId: '1'},
+    {id: '3', title: 'Television', content: 'Games of Thrones', userId: '1'}
 ]
 
-const postSlice = createSlice({
+const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
@@ -14,12 +14,13 @@ const postSlice = createSlice({
             reducer(state, action){
                 state.push(action.payload);
             },
-            prepare(title, content){
+            prepare(title, content, userId){
                 return {
                     payload: {
                         id: nanoid(),
                         title,
                         content,
+                        userId
                     }
                 }
             }
@@ -29,6 +30,6 @@ const postSlice = createSlice({
 
 export const selectAllPosts = (state) => state.posts;
 
-export const { addPost } = postSlice.actions;
+export const { addPost } = postsSlice.actions;
 
-export default postSlice.reducer;
+export default postsSlice.reducer;
