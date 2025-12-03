@@ -3,51 +3,7 @@ import {sub} from 'date-fns'
 import axios from 'axios';
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
-/*
-const initialState = [
-    {
-        id: '1',
-        title: 'Music',
-        content: 'Tosca',
-        userId: '1',
-        date: sub(new Date(), {minutes: 10}).toISOString(),
-        reactions: {
-            thumbsUp: 0,
-            wow: 0,
-            heart: 0,
-            rocket: 0,
-            coffee: 0
-        }
-    },
-    {
-        id: '2',
-        title: 'Games',
-        content: 'Nioh',
-        userId: '1',
-        date: sub(new Date(), {minutes: 5}).toISOString(),
-        reactions: {
-            thumbsUp: 0,
-            wow: 0,
-            heart: 0,
-            rocket: 0,
-            coffee: 0
-        }
-    },
-    {
-        id: '3',
-        title: 'Television',
-        content: 'Games of Thrones',
-        userId: '1',
-        date: sub(new Date(), {minutes: 8}).toISOString(),
-        reactions: {
-            thumbsUp: 0,
-            wow: 0,
-            heart: 0,
-            rocket: 0,
-            coffee: 0
-        }
-    }]
-*/
+
 const initialState = {
     posts: [],
     status: 'idle',
@@ -56,7 +12,6 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
     const response = await axios.get(POSTS_URL);
-    //return [...response.data]
     return response.data
 })
 
